@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/slider_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.etiennelawlor.discreteslider.library.ui.DiscreteSlider
+            android:id="@+id/discrete_slider"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:background="@color/grey_100"
+            app:backdropFillColor="@color/grey_200"
+            app:backdropStrokeColor="@color/grey_300"
+            app:backdropStrokeWidth="1dp"
+            app:horizontalBarThickness="4dp"
+            app:tickMarkCount="4"
+            app:tickMarkRadius="8dp"
+            app:position="1"
+            app:thumb="@drawable/thumb"
+            app:progressDrawable="@drawable/transparent_progress_drawable"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_card"
+        tools:context=".MapsActivity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
